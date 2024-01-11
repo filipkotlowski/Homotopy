@@ -2,11 +2,11 @@ export default[
     {
         title: 'Dashboard',
         route: '',
-        icon: 'HomeIcon'
+        icon: 'home'
     },
     {
         title: 'Ustawienia konta',
         route: 'user-settings',
-        icon: 'UserIcon'
+        icon: 'user'
     }
 ]

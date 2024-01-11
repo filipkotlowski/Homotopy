@@ -9,6 +9,7 @@ const props = defineProps({
 
 <template>
     <div>
+        <vue-feather :type="$props.data?.icon" />
         <span>
             {{ props.data?.title }}
         </span>
