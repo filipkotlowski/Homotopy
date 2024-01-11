@@ -1,6 +1,6 @@
 import { SimpleNavbarTab, ExtendedNavbarTab } from '../../const/types/NavbarTab';
 
-const tabs: (SimpleNavbarTab | ExtendedNavbarTab)[] = [
+const tabs: (ExtendedNavbarTab | SimpleNavbarTab)[] = [
   {
     title: 'Dashboard',
     route: '/',
@@ -15,10 +15,12 @@ const tabs: (SimpleNavbarTab | ExtendedNavbarTab)[] = [
       {
         title: 'Ustawienia użytkownika',
         route: 'user-settings',
+        resource:'settings'
       },
       {
         title: 'Ustawienia ogólne',
         route: 'global-settings',
+        resource:'settings'
       },
     ],
   },

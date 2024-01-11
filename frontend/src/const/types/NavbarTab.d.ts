@@ -10,5 +10,5 @@ export interface SimpleNavbarTab {
     title: string;
     icon: string;
     position: number;
-    children: { title: string; route: string }[];
+    children: { title: string; route: string, resource: string }[];
   }
