@@ -6,7 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer"
+    <div class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer animate-fade-down"
         :class="route == props.data?.route ? 'bg-gray-100' : ''">
         <vue-feather :type="$props.data?.icon" class="ml-2" :class="route == props.data?.route ? 'text-gray-700' : 'text-gray-500'" />
         <span class="ml-2 w-[65%]" :class="route == props.data?.route ? 'text-gray-700' : 'text-gray-500'">

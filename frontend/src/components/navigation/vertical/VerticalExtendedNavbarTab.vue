@@ -14,7 +14,7 @@ const toggleTabOpen = () => {
 <template>
     <div 
         @click="toggleTabOpen"
-        class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer"
+        class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer animate-fade-down"
         :class="route == props.data?.route ? 'bg-gray-100' : ''">
         <vue-feather :type="$props.data?.icon" class="ml-2" :class="route == props.data?.route ? 'text-gray-700' : 'text-gray-500'" />
         <span class="ml-2 w-[65%]" :class="route == props.data?.route ? 'text-gray-700' : 'text-gray-500' ">
@@ -22,7 +22,7 @@ const toggleTabOpen = () => {
         </span>
         <vue-feather size="18" :type="isTabOpen ? 'chevron-down' : 'chevron-right'" class="mr-2" :class="route == props.data?.route ? 'text-gray-700' : 'text-gray-500'" />
     </div>
-    <ol v-if="isTabOpen" class="w-full">
+    <ol v-if="isTabOpen" class="w-full animate-fade-down">
         <li v-for="subTab in props.data?.children"
             class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer"
             :class="route == props.data?.route ? 'bg-gray-100' : ''" 
