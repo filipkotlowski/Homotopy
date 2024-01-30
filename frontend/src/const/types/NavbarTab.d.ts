@@ -1,13 +1,8 @@
-export interface SimpleNavbarTab {
+export interface NavbarTab {
     title: string;
-    route: string;
+    path?: string;
     icon: string;
     position: number;
+    children?: { title: string; path: string, resource: string }[];
   }
   
-  export interface ExtendedNavbarTab {
-    title: string;
-    icon: string;
-    position: number;
-    children: { title: string; route: string, resource: string }[];
-  }

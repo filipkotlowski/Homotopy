@@ -12,7 +12,8 @@
     "feather-icons": "^4.29.1",
     "tailwindcss-animated": "^1.0.1",
     "vue": "^3.4.9",
-    "vue-feather": "^2.0.0"
+    "vue-feather": "^2.0.0",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",

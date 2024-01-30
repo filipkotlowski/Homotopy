@@ -1,9 +1,9 @@
-import { SimpleNavbarTab, ExtendedNavbarTab } from '@/const/types/NavbarTab';
+import { NavbarTab  } from '@/const/types/NavbarTab';
 
-const tabs: (ExtendedNavbarTab | SimpleNavbarTab)[] = [
+const tabs: (NavbarTab)[] = [
   {
     title: 'Dashboard',
-    route: '/',
+    path: '',
     icon: 'home',
     position: 1,
   },
@@ -14,12 +14,12 @@ const tabs: (ExtendedNavbarTab | SimpleNavbarTab)[] = [
     children: [
       {
         title: 'Ustawienia użytkownika',
-        route: 'user-settings',
+        path: 'user-settings',
         resource:'settings'
       },
       {
         title: 'Ustawienia ogólne',
-        route: 'global-settings',
+        path: 'global-settings',
         resource:'settings'
       },
     ],
