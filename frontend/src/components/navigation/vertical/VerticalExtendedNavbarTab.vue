@@ -13,7 +13,6 @@ const toggleTabOpen = () => {
     isTabOpen.value = !isTabOpen.value;
 }
 const navigateTo = (route: string) => {
-    console.log(route)
     router.push(route);
 }
 </script>
