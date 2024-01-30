@@ -1,4 +1,3 @@
-
 export interface SimpleNavbarTab {
     title: string;
     route: string;

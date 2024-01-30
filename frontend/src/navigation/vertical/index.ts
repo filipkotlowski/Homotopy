@@ -1,4 +1,4 @@
-import { SimpleNavbarTab, ExtendedNavbarTab } from '../../const/types/NavbarTab';
+import { SimpleNavbarTab, ExtendedNavbarTab } from '@/const/types/NavbarTab';
 
 const tabs: (ExtendedNavbarTab | SimpleNavbarTab)[] = [
   {

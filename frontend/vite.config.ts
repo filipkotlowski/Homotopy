@@ -6,6 +6,11 @@ export default ({ mode }) => {
     const isDevelopment = mode === "development";
 
     return defineConfig({
+        resolve: {
+            alias: {
+            '@': '/src'
+            }
+        },
         server: {
             port: 3000,
         },
