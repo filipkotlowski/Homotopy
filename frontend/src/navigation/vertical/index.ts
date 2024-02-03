@@ -3,7 +3,7 @@ import { NavbarTab  } from '@/const/types/NavbarTab';
 const tabs: (NavbarTab)[] = [
   {
     title: 'Dashboard',
-    path: '',
+    path: '/',
     icon: 'home',
     position: 1,
   },
