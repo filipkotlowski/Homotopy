@@ -6,7 +6,7 @@ import tabs from '@/navigation/vertical/index';
 </script>
 
 <template>
-    <div class="border-r-2 border-r-gray-200 w-64 h-screen px-3 text-[15px]">
+    <div class="border-r-2 border-r-gray-200 w-64 h-screen px-3 text-[15px] bg-white">
         <vertical-navbar-logo />
         <ul>
             <li v-for="tab in tabs">

@@ -4,6 +4,8 @@ import VerticalNavbar from "@/components/navigation/vertical/VerticalNavbar.vue"
 
 </script>
 <template>
-    <vertical-navbar />
-    <router-view></router-view>
+    <div class="bg-slate-100">
+        <vertical-navbar />
+        <router-view />
+    </div>
 </template>
