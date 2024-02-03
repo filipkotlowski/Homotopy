@@ -5,8 +5,7 @@ import VerticalNavbarLogo from "./VerticalNavbarLogo.vue";
 import tabs from "@/navigation/vertical/index";
 import useNavigation from "@/composable/useNavigation";
 
-const { route } = useNavigation();
-console.log('Current Route:', route.value);
+const { route, navigateTo } = useNavigation();
 </script>
 
 <template>
@@ -18,11 +17,13 @@ console.log('Current Route:', route.value);
                     v-if="!tab.children"
                     :data="tab"
                     :current-route="route"
+                    @change-route="navigateTo"
                 />
                 <vertical-extended-navbar-tab
                     v-else
                     :data="tab"
                     :current-route="route"
+                    @change-route="navigateTo"
                 />
             </li>
         </ul>

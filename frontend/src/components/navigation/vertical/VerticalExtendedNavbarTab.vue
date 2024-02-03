@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import useNavigation from '@/composable/useNavigation';
-import { ref } from 'vue';
+import { ref, defineProps, defineEmits } from 'vue';
+
+const emit = defineEmits(['changeRoute']);
+const isTabOpen = ref(false);
 
 const props = defineProps({
     data: Object,
     currentRoute: String,
 });
-const isTabOpen = ref(false);
 
 const toggleTabOpen = () => {
     isTabOpen.value = !isTabOpen.value;
 }
 
-const { navigateTo } = useNavigation();
+const handleSubTabClick = (newUrl: string) => {
+    emit('changeRoute', newUrl);
+}
+
 </script>
 
 <template>
@@ -30,7 +34,7 @@ const { navigateTo } = useNavigation();
         <li v-for="subTab in props.data?.children"
             class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer"
             :class="currentRoute == subTab.path ? 'bg-gray-100' : ''" 
-            @click="navigateTo(subTab.path)"
+            @click="handleSubTabClick(subTab.path)"
             >
             <vue-feather type="circle" size="14" class="ml-2" 
                 :class="currentRoute == subTab.path ? 'text-gray-700' : 'text-gray-500'" />

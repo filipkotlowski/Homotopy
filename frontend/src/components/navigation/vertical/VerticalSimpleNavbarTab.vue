@@ -1,19 +1,22 @@
 <script setup lang="ts">
-import useNavigation from "@/composable/useNavigation";
+
+const emit = defineEmits(['changeRoute']);
 
 const props = defineProps({
     data: Object,
     currentRoute: String,
 });
 
-const { navigateTo } = useNavigation();
+const handleSubTabClick = (newUrl: string) => {
+    emit('changeRoute', newUrl);
+}
 </script>
 
 <template>
     <div
         class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer animate-fade-down"
         :class="currentRoute == props.data?.path ? 'bg-gray-100' : ''"
-        @click="navigateTo(props.data?.path)"
+        @click="handleSubTabClick(props.data?.path)"
     >
         <vue-feather
             :type="$props.data?.icon"

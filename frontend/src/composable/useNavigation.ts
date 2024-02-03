@@ -13,7 +13,6 @@ export default function useNavigation() {
             () => router.currentRoute.value,
             (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
                 route.value = to.path.slice(1) || '';
-                console.log( route.value );
             }
         );
     };
