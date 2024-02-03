@@ -36,9 +36,9 @@ const handleSubTabClick = (newUrl: string) => {
             :class="currentRoute == subTab.path ? 'bg-gray-100' : ''" 
             @click="handleSubTabClick(subTab.path)"
             >
-            <vue-feather type="circle" size="14" class="ml-2" 
+            <vue-feather type="circle" size="10" class="ml-2" 
                 :class="currentRoute == subTab.path ? 'text-gray-700' : 'text-gray-500'" />
-            <span class="ml-2 w-[65%]" 
+            <span class="ml-2 w-[75%] py-1" 
                 :class="currentRoute == subTab.path ? 'text-gray-700' : 'text-gray-500'">
                 {{ subTab.title }}
             </span>

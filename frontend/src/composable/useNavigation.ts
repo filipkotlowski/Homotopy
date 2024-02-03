@@ -11,7 +11,7 @@ export default function useNavigation() {
     const watchRoute = () => {
         watch(
             () => router.currentRoute.value,
-            (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
+            (to: RouteLocationNormalized) => {
                 route.value = to.path.slice(1) || '';
             }
         );
