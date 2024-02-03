@@ -3,6 +3,6 @@
 
 <template>
   <div>
-    asd
+    user settings
   </div>
 </template>

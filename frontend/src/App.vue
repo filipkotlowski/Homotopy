@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DashboardView from "@/views/admin/DashboardView.vue"
+import MainView from "@/views/admin/MainView.vue"
 </script>
 
 <template>
-  <dashboard-view />
+  <main-view />
 </template>
