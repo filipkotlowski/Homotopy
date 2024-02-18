@@ -2,7 +2,7 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
   {
-    path: '/',
+    path: '/admin',
     name: '/',
     children: [
       {

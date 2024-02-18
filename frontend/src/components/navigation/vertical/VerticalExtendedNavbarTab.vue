@@ -13,8 +13,8 @@ const toggleTabOpen = () => {
     isTabOpen.value = !isTabOpen.value;
 }
 
-const handleSubTabClick = (newUrl: string) => {
-    emit('changeRoute', newUrl);
+const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
+    emit('changeRoute', newUrl, isAdmin);
 }
 
 </script>
@@ -34,7 +34,7 @@ const handleSubTabClick = (newUrl: string) => {
         <li v-for="subTab in props.data?.children"
             class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer"
             :class="currentRoute == subTab.path ? 'bg-gray-100' : ''" 
-            @click="handleSubTabClick(subTab.path)"
+            @click="handleSubTabClick(subTab.path, props.data?.isAdmin)"
             >
             <vue-feather type="circle" size="10" class="ml-2" 
                 :class="currentRoute == subTab.path ? 'text-gray-700' : 'text-gray-500'" />

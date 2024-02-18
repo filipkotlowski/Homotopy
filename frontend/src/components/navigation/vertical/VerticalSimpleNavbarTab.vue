@@ -7,8 +7,8 @@ const props = defineProps({
     currentRoute: String,
 });
 
-const handleSubTabClick = (newUrl: string) => {
-    emit('changeRoute', newUrl);
+const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
+    emit('changeRoute', newUrl, isAdmin);
 }
 </script>
 
@@ -16,7 +16,7 @@ const handleSubTabClick = (newUrl: string) => {
     <div
         class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer animate-fade-down"
         :class="currentRoute == props.data?.path ? 'bg-gray-100' : ''"
-        @click="handleSubTabClick(props.data?.path)"
+        @click="handleSubTabClick(props.data?.path, props.data?.isAdmin)"
     >
         <vue-feather
             :type="$props.data?.icon"

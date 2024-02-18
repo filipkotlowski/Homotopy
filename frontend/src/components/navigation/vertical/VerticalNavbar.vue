@@ -2,7 +2,7 @@
 import VerticalSimpleNavbarTab from "./VerticalSimpleNavbarTab.vue";
 import VerticalExtendedNavbarTab from "./VerticalExtendedNavbarTab.vue";
 import VerticalNavbarLogo from "./VerticalNavbarLogo.vue";
-import tabs from "@/navigation/vertical/index";
+import tabs from "@/navigation/admin/vertical/index";
 import useNavigation from "@/composable/useNavigation";
 
 const { route, navigateTo } = useNavigation();

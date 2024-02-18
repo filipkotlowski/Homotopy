@@ -22,8 +22,9 @@ export default function useNavigation() {
      * 
      * @param newRouteUrl string
      */
-    const navigateTo = (newRouteUrl: string) => {
-        router.push(newRouteUrl);
+    const navigateTo = (newRouteUrl: string, isAdmin: boolean) => {
+        const prefix = isAdmin ? '/admin' : '';
+        router.push(`${prefix}/${newRouteUrl}`);
     };
 
     watchRoute();
