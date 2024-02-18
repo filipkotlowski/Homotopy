@@ -6,6 +6,7 @@ import tabs from "@/navigation/admin/vertical/index";
 import useNavigation from "@/composable/useNavigation";
 
 const { route, navigateTo } = useNavigation();
+tabs.sort((a, b) => a.position - b.position);
 </script>
 
 <template>
