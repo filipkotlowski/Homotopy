@@ -1,22 +1,9 @@
-import { RouteRecordRaw } from 'vue-router';
+import adminRoutes from "./adminRoutes";
+import userRoutes from "./userRoutes";
 
-const routes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
-  {
-    path: '/admin',
-    name: '/',
-    children: [
-      {
-        path: 'dashboard',
-        name: 'Dashboard',
-        component: () => import('@/views/admin/DashboardView.vue'),
-      },
-      {
-        path: 'user-settings',
-        name: 'Ustawienia użytkownika',
-        component: () => import('@/views/admin/UserSettings.vue'),
-      },
-    ],
-  },
+const routes = [
+  ...adminRoutes,
+  ...userRoutes
 ];
 
 export default routes;

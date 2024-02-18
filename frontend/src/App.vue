@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainView from "@/views/admin/MainView.vue"
+import MainView from "@/views/MainView.vue"
 </script>
 
 <template>
