@@ -6,8 +6,8 @@ const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
         name: 'client',
         children: [
             {
-                path: '/',
-                name: 'client',
+                path: 'home',
+                name: 'home',
                 component: () => import('@/views/client/HomeView.vue'),
             },
             {
