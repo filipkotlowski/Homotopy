@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\File;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth.admin')->group(function () {
+    Route::get('{any}', function ($any) {
+        $path = public_path("app/index.html");
+        if (File::exists($path)) {
+            return File::get($path);
+        } else {
+            abort(404);
+        }
+    })->where('any', '.*');
 });
-
-Route::get('/app/{any}', function () {
-    $path = public_path('app/index.html');
-    abort_unless(file_exists($path), 400, 'Page is not Found!');
-    return file_get_contents($path);
-})
-    ->name('frontend');
