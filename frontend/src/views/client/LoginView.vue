@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import GlobalButton from '@/components/global-components/GlobalButton.vue';
-import GlobalInput from '@/components/global-components/GlobalInput.vue'; 
+import GlobalInput from '@/components/global-components/GlobalInput.vue';
 import useAuthenticate from '@/composable/useAuthenticate';
 import { ref } from 'vue';
 import useNavigation from "@/composable/useNavigation";
 import { useToast } from "vue-toastification";
 
 const { navigateTo } = useNavigation();
-const { authenticate } = useAuthenticate(navigateTo);
+const { isLoading, authenticate } = useAuthenticate(navigateTo);
 
 const userEmail = ref('');
 const userPassword = ref('');
@@ -15,16 +15,19 @@ const isError = ref(false);
 const toast = useToast();
 
 const validateForm = () => {
-        isError.value = false;
-    if(userEmail.value == ''){
+    isError.value = false;
+    isLoading.value = true;
+    if (userEmail.value == '') {
         isError.value = true;
         toast.error('Pole email musi zostać uzupełnione')
+        isLoading.value = false;
     }
-    if(userPassword.value == ''){
+    if (userPassword.value == '') {
         isError.value = true;
         toast.error('Pole hasło musi zostać uzupełnione')
+        isLoading.value = false;
     }
-    if(!isError.value){
+    if (!isError.value) {
         authenticate({ email: userEmail.value, password: userPassword.value });
     }
 };
@@ -36,11 +39,11 @@ const validateForm = () => {
                 <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
                 Flowbite
             </a>
-            <div class="w-full bg-white rounded-lg shadow border p-5 sm:max-w-md">
-                <v-form  @submit.prevent="validateForm">
-                    <global-input label="E-mail" type="email" v-model="userEmail"/>
-                    <global-input label="Hasło" type="password" v-model="userPassword"/>
-                    <global-button text="Zaloguj się"/>
+            <div class="w-full bg-white rounded-lg p-5 sm:max-w-md shadow-lg shadow-gray-200 border-gray-200 border-2">
+                <v-form @submit.prevent="validateForm">
+                    <global-input label="E-mail" type="email" v-model="userEmail" :loading="isLoading"/>
+                    <global-input label="Hasło" type="password" v-model="userPassword" :loading="isLoading"/>
+                    <global-button text="Zaloguj się" />
                 </v-form>
             </div>
         </div>
