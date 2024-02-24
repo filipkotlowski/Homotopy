@@ -3,7 +3,9 @@ import GlobalButton from '@/components/global-components/GlobalButton.vue';
 import GlobalInput from '@/components/global-components/GlobalInput.vue'; 
 import useAuthenticate from '@/composable/useAuthenticate';
 import { ref } from 'vue';
-const { authenticate } = useAuthenticate();
+import useNavigation from "@/composable/useNavigation";
+const { navigateTo } = useNavigation();
+const { authenticate } = useAuthenticate(navigateTo);
 
 const userEmail = ref('');
 const userPassword = ref('');
