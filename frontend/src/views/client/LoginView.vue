@@ -4,14 +4,29 @@ import GlobalInput from '@/components/global-components/GlobalInput.vue';
 import useAuthenticate from '@/composable/useAuthenticate';
 import { ref } from 'vue';
 import useNavigation from "@/composable/useNavigation";
+import { useToast } from "vue-toastification";
+
 const { navigateTo } = useNavigation();
 const { authenticate } = useAuthenticate(navigateTo);
 
 const userEmail = ref('');
 const userPassword = ref('');
+const isError = ref(false);
+const toast = useToast();
 
 const validateForm = () => {
-    authenticate({ email: userEmail.value, password: userPassword.value });
+        isError.value = false;
+    if(userEmail.value == ''){
+        isError.value = true;
+        toast.error('Pole email musi zostać uzupełnione')
+    }
+    if(userPassword.value == ''){
+        isError.value = true;
+        toast.error('Pole hasło musi zostać uzupełnione')
+    }
+    if(!isError.value){
+        authenticate({ email: userEmail.value, password: userPassword.value });
+    }
 };
 </script>
 <template>
