@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import GlobalButton from '@/components/global-components/GlobalButton.vue';
 import GlobalInput from '@/components/global-components/GlobalInput.vue'; 
+import useAuthenticate from '@/composable/useAuthenticate';
+import { ref } from 'vue';
+const { authenticate } = useAuthenticate();
+
+const userEmail = ref('');
+const userPassword = ref('');
+
+const validateForm = () => {
+    authenticate({ email: userEmail.value, password: userPassword.value });
+};
 </script>
 <template>
     <section class="bg-gray-50 ">
@@ -10,9 +20,9 @@ import GlobalInput from '@/components/global-components/GlobalInput.vue';
                 Flowbite
             </a>
             <div class="w-full bg-white rounded-lg shadow border p-5 sm:max-w-md">
-                <v-form validate-on="submit lazy">
-                    <global-input label="E-mail" type="email" />
-                    <global-input label="Hasło" type="password" />
+                <v-form  @submit.prevent="validateForm">
+                    <global-input label="E-mail" type="email" v-model="userEmail"/>
+                    <global-input label="Hasło" type="password" v-model="userPassword"/>
                     <global-button text="Zaloguj się"/>
                 </v-form>
             </div>
