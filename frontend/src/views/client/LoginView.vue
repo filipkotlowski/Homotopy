@@ -35,10 +35,10 @@ const validateForm = () => {
 <template>
     <section class="bg-gray-50 ">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-            <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
-                <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
-                Flowbite
-            </a>
+            <span class="flex items-center mb-6 text-2xl font-semibold text-gray-900 uppercase">
+                <img class="w-20 h-16 mr-2" src="@/assets/page_forge.png" alt="logo">
+                Pageforge
+            </span>
             <div class="w-full bg-white rounded-lg p-5 sm:max-w-md shadow-lg shadow-gray-200 border-gray-200 border-2">
                 <v-form @submit.prevent="validateForm">
                     <global-input label="E-mail" type="email" v-model="userEmail" :loading="isLoading"/>
