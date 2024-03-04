@@ -6,6 +6,7 @@ import { useToast } from "vue-toastification";
 export default function useAuthenticate(navigateTo: Function) {
     const isLoading = ref(false);
     const toast = useToast();
+
     const authenticate = ({email, password}: TLogin ) => {
         axios.post('/api/authenticate', {
             email,
@@ -19,8 +20,21 @@ export default function useAuthenticate(navigateTo: Function) {
            isLoading.value = false;
         });
     }
+
+    const logout = () => {
+        axios.post('/api/logout')
+        .then(() => {
+            toast.success("Wylogowano poprawnie!");
+            navigateTo('login');
+            isLoading.value = false;
+        }).catch(error => {
+           toast.error(error);
+           isLoading.value = false;
+        });
+    }
     return{
         isLoading,
-        authenticate
+        authenticate,
+        logout,
     }
 }
