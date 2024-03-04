@@ -1,5 +1,13 @@
 {
     "button":{
         "login": "Login"
+    },
+    "label":{
+        "email": "E-mail",
+        "password": "Password"
+    },
+    "message":{
+        "fillField": "Field „{field}” must be filled."
     }
+    
 }

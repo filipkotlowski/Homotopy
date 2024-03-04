@@ -1,5 +1,12 @@
 {
     "button":{
         "login":  "Zaloguj się"
+    },
+    "label":{
+        "email": "E-mail",
+        "password": "Hasło"
+    },
+    "message":{
+        "fillField": "Pole „{field}” musi zostać uzupełnione."
     }
 }
