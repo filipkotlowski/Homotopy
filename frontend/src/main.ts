@@ -28,9 +28,26 @@ const options: PluginOptions = {
 };
 
 
+// i18n
+import { createI18n } from 'vue-i18n'
+
+import * as enGB from '@/const/i18n/en-GB.json'
+import * as plPL from '@/const/i18n/pl-PL.json'
+
+const i18n = createI18n({
+    legacy: false,
+    locale: 'en-GB',
+    globalInjection: true,
+    messages: {
+        'en-GB': { ...enGB },
+        'pl-PL': { ...plPL },
+    },
+})
+
 const app = createApp(App);
 app.component(VueFeather.name,VueFeather)
 app.use(vuetify)
 app.use(router)
 app.use(Toast,options);
+app.use(i18n)
 app.mount('#app')
