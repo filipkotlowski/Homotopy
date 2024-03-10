@@ -1,7 +1,9 @@
 <script setup type="ts">
 import useNavigation from "@/composable/useNavigation";
+import { useI18n } from 'vue-i18n';
 
 import {defineProps} from 'vue';
+const { t } = useI18n();
 
 const props = defineProps({
     route: String,
@@ -9,7 +11,9 @@ const props = defineProps({
 </script>
 <template>
     <div class="bg-white rounded-md shadow-lg shadow-gray-200 border-gray-200 border-2 w-[90%] min-h-[88vh]">
-        <v-breadcrumbs :items="route.split('/')" />
-        <slot />
+        <v-breadcrumbs class="uppercase" :items="['Admin', t(`tab.name.${props.route}`)]" />
+        <div class="py-4 px-12">
+            <slot />
+        </div>
     </div>
 </template>

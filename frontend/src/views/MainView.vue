@@ -10,7 +10,7 @@ const { route } = useNavigation();
         <vertical-navbar />
         <div class="flex-1 ps-[260px]">
           <horizontal-navbar />
-          <router-view :current-route="route"/>
+          <router-view/>
         </div>
       </div>
     </div>
