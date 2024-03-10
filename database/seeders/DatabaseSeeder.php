@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
+use App\Models\Language;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -22,6 +21,25 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'password' => Hash::make('cqn7GYQ.qdc3zed-hkw'),
+            ]
+        );
+
+        Language::firstOrCreate(
+            [
+                'value' => 'gb-GB',
+            ],
+            [
+                'photoUrl' => '',
+                'active' => 1,
+            ]
+        );
+        Language::firstOrCreate(
+            [
+                'value' => 'pl-PL',
+            ],
+            [
+                'photoUrl' => '',
+                'active' => 0,
             ]
         );
     }
