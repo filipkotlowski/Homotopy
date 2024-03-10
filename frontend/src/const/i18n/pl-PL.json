@@ -1,6 +1,7 @@
 {
     "button":{
-        "login":  "Zaloguj się"
+        "login":  "Zaloguj się",
+        "logout": "Wyloguj się"
     },
     "label":{
         "email": "E-mail",

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import useAuthenticate from '@/composable/useAuthenticate';
 import useNavigation from '@/composable/useNavigation';
+import { useI18n } from 'vue-i18n';
 
 const { navigateTo } = useNavigation();
 const { logout } = useAuthenticate(navigateTo);
+const { t } = useI18n();
 </script>
 
 <template>
@@ -20,9 +22,10 @@ const { logout } = useAuthenticate(navigateTo);
                 </v-list>
                 <v-list>
                     <v-list-item>
-                        <div class="flex items-center w-full hover:cursor-pointer hover:bg-gray-100 p-2 rounded-md"  @click="logout">
+                        <div class="flex items-center w-full hover:cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+                            @click="logout">
                             <vue-feather type="log-out" class="text-gray-700 flex items-center" />
-                            <span class="text-gray-700 mx-5">Wyloguj się</span>
+                            <span class="text-gray-700 mx-5">{{ t('button.logout') }}</span>
                         </div>
                     </v-list-item>
                 </v-list>
