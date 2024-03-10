@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ref, defineProps, defineEmits } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const emit = defineEmits(['changeRoute']);
 const isTabOpen = ref(false);
+const { t } = useI18n();
+
 
 const props = defineProps({
     data: Object,
@@ -26,7 +29,7 @@ const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
         :class="currentRoute == props.data?.path ? 'bg-gray-100' : ''">
         <vue-feather :type="$props.data?.icon" class="ml-2" :class="currentRoute == props.data?.path ? 'text-gray-700' : 'text-gray-500'" />
         <span class="ml-2 w-[65%]" :class="currentRoute == props.data?.path ? 'text-gray-700' : 'text-gray-500' ">
-            {{ props.data?.title }}
+            {{ t(`tab.name.${props.data?.title}`) }}
         </span>
         <vue-feather size="18" :type="isTabOpen ? 'chevron-down' : 'chevron-right'" class="mr-2" :class="currentRoute == props.data?.path ? 'text-gray-700' : 'text-gray-500'" />
     </div>
@@ -40,7 +43,7 @@ const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
                 :class="currentRoute == subTab.path ? 'text-gray-700' : 'text-gray-500'" />
             <span class="ml-2 w-[75%] py-1" 
                 :class="currentRoute == subTab.path ? 'text-gray-700' : 'text-gray-500'">
-                {{ subTab.title }}
+                {{ t(`tab.name.${subTab.title}`) }}
             </span>
         </li>
     </ol>

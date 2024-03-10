@@ -36,7 +36,7 @@ import * as plPL from '@/const/i18n/pl-PL.json'
 
 const i18n = createI18n({
     legacy: false,
-    locale: 'pl-PL',
+    locale: 'en-GB',
     globalInjection: true,
     messages: {
         'en-GB': { ...enGB },

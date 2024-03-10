@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 
 const emit = defineEmits(['changeRoute']);
+const { t } = useI18n();
 
 const props = defineProps({
     data: Object,
     currentRoute: String,
 });
+
 
 const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
     emit('changeRoute', newUrl, isAdmin);
@@ -27,7 +30,7 @@ const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
             class="ml-2 w-[65%]"
             :class="currentRoute == props.data?.path ? 'text-gray-700' : 'text-gray-500' "
         >
-            {{ props.data?.title }}
+            {{ t(`tab.name.${props.data?.title}`) }}
         </span>
         <vue-feather
             size="18"

@@ -8,5 +8,13 @@
     },
     "message":{
         "fillField": "Pole „{field}” musi zostać uzupełnione."
+    },
+    "tab":{
+        "name":{
+            "dashboard": "Strona główna",
+            "settings": "Ustawienia",
+            "userSettings" : "Ustawienia użytkownika",
+            "globalSettings" : "Ustawienia ogólne"
+        }
     }
 }

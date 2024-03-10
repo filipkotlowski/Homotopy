@@ -2,25 +2,25 @@ import { NavbarTab } from '@/const/types/NavbarTab';
 
 const tabs: (NavbarTab)[] = [
   {
-    title: 'Dashboard',
+    title: 'dashboard',
     path: 'dashboard',
     icon: 'home',
     isAdmin: true,
     position: 1,
   },
   {
-    title: 'Ustawienia',
+    title: 'settings',
     icon: 'settings',
     position: 2,
     isAdmin: true,
     children: [
       {
-        title: 'Ustawienia użytkownika',
+        title: 'userSettings',
         path: 'user-settings',
         resource: 'settings',
       },
       {
-        title: 'Ustawienia ogólne',
+        title: 'globalSettings',
         path: 'global-settings',
         resource: 'settings',
       },
