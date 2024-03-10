@@ -26,7 +26,7 @@ const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
     <div 
         @click="toggleTabOpen"
         class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer animate-fade-down"
-        :class="currentRoute == props.data?.path ? 'bg-gray-100' : ''">
+        :class="currentRoute == `admin/${props.data?.path}` ? 'bg-gray-100' : ''">
         <vue-feather :type="$props.data?.icon" class="ml-2" :class="currentRoute == props.data?.path ? 'text-gray-700' : 'text-gray-500'" />
         <span class="ml-2 w-[65%]" :class="currentRoute == props.data?.path ? 'text-gray-700' : 'text-gray-500' ">
             {{ t(`tab.name.${props.data?.title}`) }}
@@ -36,7 +36,7 @@ const handleSubTabClick = (newUrl: string, isAdmin: boolean) => {
     <ol v-if="isTabOpen" class="w-full animate-fade-down">
         <li v-for="subTab in props.data?.children"
             class="list-none py-2 mb-2 flex items-center rounded-md hover:bg-gray-100 hover:cursor-pointer"
-            :class="currentRoute == subTab.path ? 'bg-gray-100' : ''" 
+            :class="currentRoute == `admin/${subTab.path}` ? 'bg-gray-100' : ''" 
             @click="handleSubTabClick(subTab.path, props.data?.isAdmin)"
             >
             <vue-feather type="circle" size="10" class="ml-2" 

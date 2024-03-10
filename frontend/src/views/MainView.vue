@@ -5,7 +5,7 @@ import useNavigation from "@/composable/useNavigation";
 const { route } = useNavigation();
 </script>
 <template>
-    <div class="bg-gray-50" v-if="route.includes('admin/')">
+    <div class="bg-gray-50 min-h-svh" v-if="route.includes('admin/')">
       <div class="flex" dir="ltr">
         <vertical-navbar />
         <div class="flex-1 ps-[260px]">
