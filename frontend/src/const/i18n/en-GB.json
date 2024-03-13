@@ -1,4 +1,6 @@
 {
+    "gbGB": "English",
+    "plPL": "Polish",
     "button":{
         "login": "Login",
         "logout": "Logout"

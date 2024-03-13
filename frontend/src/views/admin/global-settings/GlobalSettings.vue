@@ -2,6 +2,8 @@
 import GlobalCard from "@/components/global-components/GlobalCard.vue"
 import GlobalSelect from "@/components/global-components/GlobalSelect.vue"
 import { useI18n } from 'vue-i18n';
+import useLanguage from '@/composable/useLanguage';
+const { languages } = useLanguage();
 const { t } = useI18n();
 </script>
 
@@ -12,6 +14,7 @@ const { t } = useI18n();
     >
     <global-select 
       :label="t('label.language')"
+      :items="languages"
     />
     </global-card>
   </div>

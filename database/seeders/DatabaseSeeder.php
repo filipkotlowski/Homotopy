@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
                 'value' => 'gb-GB',
             ],
             [
-                'photoUrl' => '',
+                'photoUrl' => 'https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png',
                 'active' => 1,
             ]
         );
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
                 'value' => 'pl-PL',
             ],
             [
-                'photoUrl' => '',
+                'photoUrl' => 'https://www.countryflags.com/wp-content/uploads/poland-flag-png-large.png',
                 'active' => 0,
             ]
         );

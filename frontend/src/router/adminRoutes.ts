@@ -15,7 +15,7 @@ const adminRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
       },
       {
         path: 'global-settings',
-        component: () => import('@/views/admin/GlobalSettings.vue'),
+        component: () => import('@/views/admin/global-settings/GlobalSettings.vue'),
       },
     ],
   },

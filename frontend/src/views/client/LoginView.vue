@@ -44,10 +44,10 @@ const validateForm = () => {
             </span>
             <div class="w-full bg-white rounded-lg p-5 sm:max-w-md shadow-lg shadow-gray-200 border-gray-200 border-2">
                 <v-form @submit.prevent="validateForm">
-                    <global-input :label="$t('label.email')" type="email" v-model="userEmail" :loading="isLoading" />
-                    <global-input :label="$t('label.password')" type="password" v-model="userPassword"
+                    <global-input :label="t('label.email')" type="email" v-model="userEmail" :loading="isLoading" />
+                    <global-input :label="t('label.password')" type="password" v-model="userPassword"
                         :loading="isLoading" />
-                    <global-button :text="$t('button.login')" />
+                    <global-button :text="t('button.login')" />
                 </v-form>
             </div>
         </div>

@@ -1,4 +1,7 @@
 {
+    "gbGB": "Angielski",
+    "plPL": "Polski",
+    "optionPhoto": "<img src='%{url}' />",
     "button":{
         "login":  "Zaloguj się",
         "logout": "Wyloguj się"
