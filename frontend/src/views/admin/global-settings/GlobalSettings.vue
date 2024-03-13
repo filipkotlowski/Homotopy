@@ -3,7 +3,7 @@ import GlobalCard from "@/components/global-components/GlobalCard.vue"
 import GlobalSelect from "@/components/global-components/GlobalSelect.vue"
 import GlobalButton from "@/components/global-components/GlobalButton.vue"
 import { useI18n } from 'vue-i18n';
-import useLanguage from '@/composable/useLanguage';
+import useLanguage from './useGlobalSettings';
 const { languages } = useLanguage();
 const { t } = useI18n();
 </script>

@@ -17,8 +17,6 @@ export interface BasicShowRequestParams {
 
 export interface IBaseModel {
     id: number;
-    code: string;
-    external_id: string;
     created_at: Date;
-    updated_at?: Date;
+    updated_at: Date;
 }

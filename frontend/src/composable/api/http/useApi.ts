@@ -1,5 +1,5 @@
-import { BasicIndexRequestParams, BasicShowRequestParams } from '@/const/types/endpoint';
-import axios from '@libs/axios';
+import { BasicIndexRequestParams, BasicShowRequestParams } from '@/const/types/Endpoint';
+import axios from 'axios';
 
 const useApi = <Model>(baseEndpoint: string) => {
 
@@ -21,7 +21,6 @@ const useApi = <Model>(baseEndpoint: string) => {
     }): Promise<TFetchOneResponse> => {
 
         const combinedEndpoint = endpoint ? `${baseEndpoint}/${endpoint}` : baseEndpoint
-
         try {
             const { data } = await axios.get<TFetchOneResponse>(`${combinedEndpoint}/${key}`, { params });
 

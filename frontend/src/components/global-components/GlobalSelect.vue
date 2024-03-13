@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { defineProps, PropType } from 'vue';
-import { TSelectOption } from "@/const/types/TSelectOption";
+import { defineProps, PropType } from 'vue';
+import { TLanguage } from "@/const/types/Languages";
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 const props = defineProps({
-   items: Object as PropType<TSelectOption>,
+   items: Object as PropType<TLanguage>,
    label: String
 });
 
-const itemProps = (item) => {
+const itemProps = (item: any) => {
    return {
       title: t(item.value.replace('-', '')),
    }
