@@ -1,6 +1,9 @@
 {
     "gbGB": "English",
     "plPL": "Polish",
+    "text":{
+        "save": "Save"
+    },
     "button":{
         "login": "Login",
         "logout": "Logout"

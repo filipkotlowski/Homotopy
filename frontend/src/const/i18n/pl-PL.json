@@ -1,6 +1,9 @@
 {
     "gbGB": "Angielski",
     "plPL": "Polski",
+    "text":{
+        "save": "Zapisz"
+    },
     "optionPhoto": "<img src='%{url}' />",
     "button":{
         "login":  "Zaloguj się",

@@ -47,7 +47,7 @@ const validateForm = () => {
                     <global-input :label="t('label.email')" type="email" v-model="userEmail" :loading="isLoading" />
                     <global-input :label="t('label.password')" type="password" v-model="userPassword"
                         :loading="isLoading" />
-                    <global-button :text="t('button.login')" />
+                    <global-button :text="t('button.login')" class="w-[100%]"/>
                 </v-form>
             </div>
         </div>

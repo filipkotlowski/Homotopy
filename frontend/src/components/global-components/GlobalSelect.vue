@@ -25,7 +25,7 @@ const itemProps = (item) => {
       <template v-slot:item="{ props, item }" >
          <v-list-item v-bind="props" :title="item.title" >
             <template v-slot:prepend>
-               <img :src="item.raw.photoUrl"  width="100" class="mr-3 border-black border-solid border-[1px]"/>
+               <img :src="item.raw.photoUrl"  width="50" class="mr-3 border-black border-solid border-[1px]"/>
             </template>
          </v-list-item>
       </template>
