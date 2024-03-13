@@ -1,13 +1,10 @@
 import { TLanguage } from "@/const/types/Languages";
 import { BasicIndexRequestParams } from "@/const/types/Endpoint";
 import useApi from "./useApi";
-interface IStoreLanguageParams {
-  setNewLanguage?: boolean;
-}
 
 const useLanguageApi = () => {
 
-  const { fetchAll, createOne } = useApi<TLanguage>('/api/languages');
+  const { fetchAll, createOne,updateOne } = useApi<TLanguage>('/api/languages');
 
   /**
    * GET /index - returns all languages based on provided params.
@@ -25,12 +22,29 @@ const useLanguageApi = () => {
   /**
    * post /languages - create new languages.
    */
-  const createLanguage = async (body: Partial<TLanguage>, meta: IStoreLanguageParams = {}) => {
+  const createLanguage = async (body: Partial<TLanguage>) => {
+    console.log(body);
     try {
       const { data } = await createOne({
         body: {
           ...body,
-          meta,
+        }
+      })
+
+      return data;
+    } catch (error) {
+      throw error
+    }
+  }
+
+  /**
+   * put /languages - update existing language.
+   */
+  const updateLanguage = async (body: Partial<TLanguage>) => {
+    try {
+      const { data } = await updateOne({
+        body: {
+          ...body,
         }
       })
 
@@ -42,6 +56,7 @@ const useLanguageApi = () => {
   return{
     displayLanguages,
     createLanguage,
+    updateLanguage,
   }
 }
 

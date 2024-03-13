@@ -3,16 +3,21 @@ import GlobalCard from "@/components/global-components/GlobalCard.vue"
 import GlobalSelect from "@/components/global-components/GlobalSelect.vue"
 import GlobalButton from "@/components/global-components/GlobalButton.vue"
 import { useI18n } from 'vue-i18n';
-import useLanguage from './useGlobalSettings';
-const { languages } = useLanguage();
+import useGlobalSettings from './useGlobalSettings';
+import { TLanguage } from "@/const/types/Languages";
+const { languages, setNewLanguage, newLanguage} = useGlobalSettings();
 const { t } = useI18n();
+
+const updateValue = (newValue: TLanguage) => {
+  newLanguage.value = newValue.value
+}
 </script>
 
 <template>
   <div class="flex justify-center">
     <global-card route="globalSettings">
-      <v-form @submit.prevent>
-        <global-select :label="t('label.language')" :items="languages" />
+      <v-form @submit.prevent="setNewLanguage">
+        <global-select :label="t('label.language')" :items="languages" @update:value="updateValue" />
         <v-divider class="border-opacity-75"></v-divider>
         <global-button :text="t('text.save')" class="w-[100px] my-5"/>
       </v-form>
