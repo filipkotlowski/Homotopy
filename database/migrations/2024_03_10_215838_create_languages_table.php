@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('value',45);
             $table->string('photoUrl',255);
-            $table->tinyInteger('active');
+            $table->boolean('active');
             $table->timestamps();
         });
     }

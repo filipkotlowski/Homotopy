@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('web')->group(function () {
     Route::get('/languages', [LanguageController::class, 'all']);
+    Route::put('/languages', [LanguageController::class, 'update']);
     Route::post('/authenticate', [AuthenticationController::class, 'authenticate']);
     Route::post('logout', [AuthenticationController::class, 'logout']);
 });
