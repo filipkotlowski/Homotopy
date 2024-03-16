@@ -1,30 +1,40 @@
-import useLanguageApi from '@/composable/api/http/useLanguageApi';
-import { TLanguage } from '@/const/types/Languages';
-import { ref } from 'vue';
+import useLanguageApi from "@/composable/api/http/useLanguageApi";
+import { TLanguage } from "@/const/types/Languages";
+import { computed, ref } from "vue";
+
 
 const { displayLanguages, updateLanguage } = useLanguageApi();
 
 const useGlobalSettings = () => {
     const languages = ref<TLanguage[]>([]);
     const newLanguage = ref("");
-    
-    const getAllLanguages = async() => {
-         languages.value = await displayLanguages({});
-    }
 
-    const setNewLanguage = async() => {
+    const getAllLanguages = async () => {
+        languages.value = await displayLanguages({});
+    };
+
+    const setNewLanguage = async () => {
         console.log(newLanguage.value);
-        const data = await updateLanguage({
+        await updateLanguage({
             value: newLanguage.value,
-            active: true,
+            active: 1,
         });
-    }
+    };
+
+    const currentLanguage = computed(() => {
+        return (
+            languages.value
+            ?.filter((item) => item.active === 1)
+                .map((item) => item.value)
+        );
+    });
 
     getAllLanguages();
     return {
         languages,
         newLanguage,
-        setNewLanguage
+        currentLanguage,
+        setNewLanguage,
     };
 };
 
