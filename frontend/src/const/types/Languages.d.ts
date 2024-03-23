@@ -1,6 +1,4 @@
-import { IBaseModel } from './Endpoint';
-
-interface IBaseLanguage extends IBaseModel {
+export interface TLanguage {
     value: string;
     photoUrl: string;
     active: number;
@@ -8,5 +6,3 @@ interface IBaseLanguage extends IBaseModel {
     updated_at:Date,
     id:number,
 }
-
-export type TLanguage = IBaseLanguage

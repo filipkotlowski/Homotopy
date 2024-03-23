@@ -18,18 +18,19 @@ const useGlobalSettings = () => {
     };
 
     const currentLanguage = computed(() => {
-        const language = (languages.value ?? [])
-            ?.filter((item) => item.active === 1)
-            .map((item) => item.value);
+        const language = (
+            typeof languages.value == "object" ? languages.value : []
+        )
+            ?.filter((item: { active: number }) => item.active === 1)
+            .map((item: { value: string }) => item.value);
 
         if (language.length > 0) {
             t.locale.value = language[0];
         }
         return language;
     });
-    interializationActions.getLanguages();
+
     return {
-        languages,
         newLanguage,
         currentLanguage,
         setNewLanguage,

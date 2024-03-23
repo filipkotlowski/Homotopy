@@ -29,7 +29,7 @@ export default function useInternalization() {
                 return console.error(error);
             });
     };
-
+    getLanguages();
     return {
         actions: {
             getLanguages,
