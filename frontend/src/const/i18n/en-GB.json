@@ -14,7 +14,12 @@
         "language": "Choose language"
     },
     "message":{
-        "fillField": "Field „{field}” must be filled."
+        "fillField": "Field „{field}” must be filled.",
+        "success":{
+            "changeLanguage": "Successfull change language in application!",
+            "login": "Successfull login!",
+            "logout": "Successfull logout!"
+        }
     },
     "tab":{
         "name":{

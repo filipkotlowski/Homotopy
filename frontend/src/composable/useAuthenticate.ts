@@ -2,6 +2,8 @@ import { TLogin } from "@/const/types/Authentication/TLogin";
 import axios from "axios";
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
+import useNotifications from "@/composable/useNotifications";
+const { actions: notificationActions } = useNotifications();
 
 export default function useAuthenticate(navigateTo: Function) {
     const isLoading = ref(false);
@@ -19,12 +21,13 @@ export default function useAuthenticate(navigateTo: Function) {
                 password,
             })
             .then(() => {
-                toast.success("Zalogowano poprawnie!");
+                notificationActions.successNotification('message.success.login',true)
                 navigateTo("dashboard", true);
                 isLoading.value = false;
             })
             .catch((error) => {
-                toast.error(error);
+                console.log(error);
+                notificationActions.errorNotification(error.response.data.message)
                 isLoading.value = false;
             });
     };
@@ -36,12 +39,13 @@ export default function useAuthenticate(navigateTo: Function) {
         await axios
             .post("/api/logout")
             .then(() => {
-                toast.success("Wylogowano poprawnie!");
+                notificationActions.successNotification('message.success.logout',true)
                 navigateTo("login");
                 isLoading.value = false;
             })
             .catch((error) => {
                 toast.error(error);
+                notificationActions.errorNotification(error.response.data.message)
                 isLoading.value = false;
             });
     };
