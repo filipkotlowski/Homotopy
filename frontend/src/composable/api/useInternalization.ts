@@ -1,6 +1,6 @@
 import { TLanguage } from "@/const/types/Languages";
 import axios from "axios";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useToast } from "vue-toastification";
 
 export default function useInternalization() {
@@ -29,7 +29,9 @@ export default function useInternalization() {
                 return console.error(error);
             });
     };
-    getLanguages();
+    onMounted(() => {
+        getLanguages();
+    })
     return {
         actions: {
             getLanguages,

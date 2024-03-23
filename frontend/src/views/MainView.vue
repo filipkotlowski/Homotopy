@@ -3,10 +3,9 @@ import VerticalNavbar from "@/components/navigation/vertical/VerticalNavbar.vue"
 import HorizontalNavbar from "@/components/navigation/horizontal/HorizontalNavbar.vue";
 import useNavigation from "@/composable/useNavigation";
 import useInternalization from "@/composable/api/useInternalization";
-const { actions: interializationActions } = useInternalization();
+useInternalization();
 const { route } = useNavigation();
 
-interializationActions.getLanguages();
 </script>
 <template>
     <div class="bg-gray-50 min-h-svh" v-if="route.includes('admin/')">

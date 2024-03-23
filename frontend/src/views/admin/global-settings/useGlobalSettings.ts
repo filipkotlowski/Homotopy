@@ -32,12 +32,14 @@ const useGlobalSettings = () => {
 
         if (language.length > 0) {
             t.locale.value = language[0];
+        } else {
+            interializationActions.getLanguages();
         }
         return language;
     });
 
     return {
-        actions:{
+        actions: {
             setNewLanguage,
         },
         newLanguage,
