@@ -1,30 +1,24 @@
-import useLanguageApi from "@/composable/api/http/useLanguageApi";
-import { TLanguage } from "@/const/types/Languages";
+import useInternalization from "@/composable/api/useInternalization";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-
-const { displayLanguages, updateLanguage } = useLanguageApi();
+const { actions: interializationActions, languages } = useInternalization();
 
 const useGlobalSettings = () => {
     const t = useI18n();
-    const languages = ref<TLanguage[]>([]);
     const newLanguage = ref("");
-
-    const getAllLanguages = async () => {
-        languages.value = await displayLanguages({});
-    };
 
     const setNewLanguage = async () => {
         t.locale.value = newLanguage.value;
-        await updateLanguage({
-            value: newLanguage.value,
+        await interializationActions.updateLanguages({
+            value: newLanguage.value.toString(),
             active: 1,
         });
-        getAllLanguages();
+
+        interializationActions.getLanguages();
     };
 
     const currentLanguage = computed(() => {
-        const language = languages.value
+        const language = (languages.value ?? [])
             ?.filter((item) => item.active === 1)
             .map((item) => item.value);
 
@@ -33,13 +27,12 @@ const useGlobalSettings = () => {
         }
         return language;
     });
-    getAllLanguages();
+    interializationActions.getLanguages();
     return {
         languages,
         newLanguage,
         currentLanguage,
         setNewLanguage,
-        getAllLanguages,
     };
 };
 
