@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         Language::firstOrCreate(
             [
-                'value' => 'gb-GB',
+                'value' => 'en-GB',
             ],
             [
                 'photoUrl' => 'https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png',
