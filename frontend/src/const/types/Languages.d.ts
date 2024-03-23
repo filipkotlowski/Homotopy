@@ -1,4 +1,5 @@
 export interface TLanguage {
+    [x: string]: any;
     value: string;
     photoUrl: string;
     active: number;

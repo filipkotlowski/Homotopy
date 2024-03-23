@@ -7,6 +7,9 @@ const useGlobalSettings = () => {
     const t = useI18n();
     const newLanguage = ref("");
 
+    /**
+     * Update language in database and in i18n.
+     */
     const setNewLanguage = async () => {
         t.locale.value = newLanguage.value;
         await interializationActions.updateLanguages({
@@ -17,6 +20,9 @@ const useGlobalSettings = () => {
         interializationActions.getLanguages();
     };
 
+    /**
+     * Watch current language and change in i18n at startup.
+     */
     const currentLanguage = computed(() => {
         const language = (
             typeof languages.value == "object" ? languages.value : []
@@ -31,9 +37,11 @@ const useGlobalSettings = () => {
     });
 
     return {
+        actions:{
+            setNewLanguage,
+        },
         newLanguage,
         currentLanguage,
-        setNewLanguage,
     };
 };
 
