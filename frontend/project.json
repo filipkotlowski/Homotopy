@@ -1,0 +1,16 @@
+{
+    "name": "frontend",
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "sourceRoot": "src",
+    "projectType": "application",
+    "implicitDependencies": ["default"],
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npm run serve",
+                "cwd": ""
+            }
+        }
+    }
+}

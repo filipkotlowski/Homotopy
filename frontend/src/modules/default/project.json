@@ -1,0 +1,15 @@
+{
+    "name": "default",
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "sourceRoot": "",
+    "projectType": "application",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npm run serve",
+                "cwd": ""
+            }
+        }
+    }
+}
