@@ -1,27 +1,40 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vite ",
-        "watch": "vite build --watch",
-        "build": "vue-tsc --noEmit && vite build --emptyOutDir",
-        "preview": "vite preview",
-        "front:serve": "cd frontend && npm run watch",
-        "front:build": "cd frontend && npm run build",
-        "serve": "concurrently \"php artisan serve --port=8080\" \"npm run front:serve\"",
-        "deploy": "npm run setup && npm run front:build && php artisan migrate"
-    },
-    "devDependencies": {
-        "axios": "^1.6.1",
-        "laravel-vite-plugin": "^1.0.0",
-        "vite": "^5.0.0"
-    },
-    "dependencies": {
-        "@mdi/font": "^7.4.47",
-        "concurrently": "^8.2.2",
-        "vue-i18n": "^9.10.1",
-        "vue-toastification": "^2.0.0-rc.5",
-        "vue-tsc": "^1.8.27",
-        "vuetify": "^3.5.6"
+  "name":"app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite ",
+    "watch": "vite build --watch",
+    "build": "vue-tsc --noEmit && vite build --emptyOutDir",
+    "preview": "vite preview",
+    "front:serve": "cd frontend && npm run watch",
+    "front:build": "cd frontend && npm run build",
+    "serve": "concurrently \"php artisan serve --port=8080\" \"npm run front:serve\"",
+    "deploy": "npm run setup && npm run front:build && php artisan migrate"
+  },
+  "nx": {
+    "includedScripts": ["serve"],
+    "targets": {
+      "test": {
+        "cache": "true",
+        "inputs": ["default", "^default"],
+        "outputs": []
+      }
     }
+  },
+  "devDependencies": {
+    "axios": "^1.6.1",
+    "laravel-vite-plugin": "^1.0.0",
+    "vite": "^5.0.0",
+    "nx": "18.2.2",
+    "@nx/vite": "18.2.2"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "concurrently": "^8.2.2",
+    "vue-i18n": "^9.10.1",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue-tsc": "^1.8.27",
+    "vuetify": "^3.5.6"
+  }
 }
