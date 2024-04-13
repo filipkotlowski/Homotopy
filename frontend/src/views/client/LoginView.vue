@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GlobalButton from '@/components/global-components/GlobalButton.vue';
+import GlobalPrimaryButton from '@/components/global-components/GlobalPrimaryButton.vue';
 import GlobalInput from '@/components/global-components/GlobalInput.vue';
 import useAuthenticate from '@/composable/useAuthenticate';
 import { ref } from 'vue';
@@ -39,15 +39,15 @@ const validateForm = () => {
     <section class="bg-gray-50 ">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
             <span class="flex items-center mb-6 text-2xl font-semibold text-gray-900 uppercase">
-                <img class="w-20 h-16 mr-2" src="@/assets/page_forge.png" alt="logo">
-                Pageforge
+                <img class="h-20 mr-2" src="@/assets/logo.png" alt="logo">
+                Vortex
             </span>
-            <div class="w-full bg-white rounded-lg p-5 sm:max-w-md shadow-lg shadow-gray-200 border-gray-200 border-2">
+            <div class="w-full bg-white rounded-lg p-5 sm:max-w-md shadow-lg shadow-primary border-gray-200 border-2">
                 <v-form @submit.prevent="validateForm">
                     <global-input :label="t('label.email')" type="email" v-model="userEmail" :loading="isLoading" />
                     <global-input :label="t('label.password')" type="password" v-model="userPassword"
                         :loading="isLoading" />
-                    <global-button :text="t('button.login')" class="w-[100%]"/>
+                    <global-primary-button :text="t('button.login')" class="w-[100%]"/>
                 </v-form>
             </div>
         </div>

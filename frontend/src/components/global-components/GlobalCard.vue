@@ -10,7 +10,7 @@ const props = defineProps({
 });
 </script>
 <template>
-    <div class="bg-white rounded-md shadow-lg shadow-gray-200 border-gray-200 border-2 w-[90%] min-h-[88vh]">
+    <div class="bg-dark-secondary rounded-md shadow-lg shadow-primary border-dark-secondary border-2 w-[90%] min-h-[88vh] text-white">
         <v-breadcrumbs class="uppercase" :items="['Admin', t(`tab.name.${props.route}`)]" />
         <div class="py-4 px-12">
             <slot />

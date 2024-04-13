@@ -10,7 +10,7 @@ tabs.sort((a, b) => a.position - b.position);
 </script>
 
 <template>
-    <div class="border-r-2 border-r-gray-200 w-[260px] fixed shadow-lg shadow-gray-200 h-screen px-3 text-[15px] bg-white">
+    <div class="w-[260px] fixed shadow-xl shadow-primary h-screen px-3 text-[15px] bg-dark-secondary text-white">
         <vertical-navbar-logo />
         <ul>
             <li v-for="tab in tabs">
