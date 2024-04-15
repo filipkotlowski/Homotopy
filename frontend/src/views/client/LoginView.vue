@@ -40,7 +40,7 @@ const validateForm = () => {
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
             <span class="flex items-center mb-6 text-2xl font-semibold text-white uppercase">
                 <img class="h-20 mr-2" src="@/assets/logo.png" alt="logo">
-                Vortex
+                Homotopy
             </span>
             <div class="w-full bg-dark-secondary rounded-lg p-5 sm:max-w-md shadow-lg shadow-primary  text-white">
                 <v-form @submit.prevent="validateForm">
