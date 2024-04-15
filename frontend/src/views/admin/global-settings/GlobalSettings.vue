@@ -7,10 +7,11 @@ import { useI18n } from 'vue-i18n';
 import useGlobalSettings from './useGlobalSettings';
 import { TLanguage } from "@/const/types/Languages";
 import useInternalization from "@/composable/api/useInternalization"
-const { actions: settingsActions, newLanguage, currentLanguage} = useGlobalSettings();
+import { ref } from "vue";
+const { actions: settingsActions, newLanguage, currentLanguage } = useGlobalSettings();
 const { languages } = useInternalization()
 const { t } = useI18n();
-
+const tab = ref('general')
 const updateValue = (newValue: TLanguage) => {
   newLanguage.value = newValue.value
 }
@@ -19,11 +20,28 @@ const updateValue = (newValue: TLanguage) => {
 <template>
   <div class="flex justify-center">
     <global-card route="globalSettings">
-      <v-form @submit.prevent="settingsActions.setNewLanguage">
-        <global-select :label="t('label.language')" :items="languages" :default-value="currentLanguage.map((language: string) => t(language.replace('-', '')))"  @update:value="updateValue" />
-          <global-divider />
-        <global-primary-button :text="t('text.save')" class="w-[100px] my-5"/>
-      </v-form>
+        <v-tabs v-model="tab" align-tabs="center" color="primary">
+          <v-tab value="general">General</v-tab>
+          <v-tab value="internationalization">Internationalization</v-tab>
+          <v-tab value="template">Template</v-tab>
+        </v-tabs>
+        <v-window v-model="tab">
+          <v-window-item value="general">
+            <v-form @submit.prevent="settingsActions.setNewLanguage">
+              <global-select :label="t('label.language')" :items="languages"
+                :default-value="currentLanguage.map((language: string) => t(language.replace('-', '')))"
+                @update:value="updateValue" />
+              <global-divider />
+              <global-primary-button :text="t('text.save')" class="w-[100px] my-5" />
+            </v-form>
+          </v-window-item>
+          <v-window-item value="internationalization">
+            internationalization
+          </v-window-item>
+          <v-window-item value="template">
+            template
+          </v-window-item>
+        </v-window>
     </global-card>
   </div>
 </template>
