@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import GlobalCard from "@/components/global-components/GlobalCard.vue"
 import GlobalSettingsGeneralTab from "@/views/admin/global-settings/GlobalSettingsGeneralTab.vue"
+import GlobalSettingsTemplateTab from "@/views/admin/global-settings/GlobalSettingsTemplateTab.vue"
 import { ref } from "vue";
-const tab = ref('general')
+const tab = ref('template')
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -11,7 +12,7 @@ const { t } = useI18n();
 <template>
   <div class="flex justify-center">
     <global-card route="globalSettings">
-        <v-tabs v-model="tab" align-tabs="center" color="primary">
+        <v-tabs v-model="tab" align-tabs="center" color="primary" class="mb-5">
           <v-tab value="general">{{ t('tab.globalSettings.general') }}</v-tab>
           <v-tab value="internationalization">{{ t('tab.globalSettings.internationalization') }}</v-tab>
           <v-tab value="template">{{ t('tab.globalSettings.template') }}</v-tab>
@@ -24,7 +25,7 @@ const { t } = useI18n();
             internationalization
           </v-window-item>
           <v-window-item value="template">
-            template
+            <global-settings-template-tab />
           </v-window-item>
         </v-window>
     </global-card>
