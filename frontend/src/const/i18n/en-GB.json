@@ -27,6 +27,11 @@
             "settings": "Settings",
             "userSettings" : "User Settings",
             "globalSettings" : "Global Settings"
+        },
+        "globalSettings":{
+            "general": "General",
+            "internationalization": "Internationalization",
+            "template": "Template"
         }
     }
     

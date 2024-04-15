@@ -28,6 +28,11 @@
             "settings": "Ustawienia",
             "userSettings" : "Ustawienia użytkownika",
             "globalSettings" : "Ustawienia ogólne"
+        },
+        "globalSettings":{
+            "general": "Ogólne",
+            "internationalization": "Internacjonalizacja",
+            "template": "Szablon"
         }
     }
 }
