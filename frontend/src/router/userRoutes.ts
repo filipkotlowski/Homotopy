@@ -1,6 +1,8 @@
 import { RouteRecordRaw } from 'vue-router';
-import settings from '@/../../settings.json';
-
+import useSettings from "@/composable/useSettings"
+const {actions: settingActions} = useSettings();
+const templateName = settingActions.getSetting("templateName");
+settingActions.updateSetting("templateName","template_two")
 const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
     {
         path: '/',
@@ -9,7 +11,7 @@ const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
             {
                 path: 'home',
                 name: 'home',
-                component: () => import(`./../views/client/${settings.templateName}/HomeView.vue`),
+                component: () => import(`./../views/client/${templateName}/HomeView.vue`),
             },
             {
                 path: 'login',
