@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
+import settings from '@/../../settings.json';
 
 const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
     {
@@ -8,7 +9,7 @@ const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
             {
                 path: 'home',
                 name: 'home',
-                component: () => import('@/views/client/HomeView.vue'),
+                component: () => import(`./../views/client/${settings.templateName}/HomeView.vue`),
             },
             {
                 path: 'login',
