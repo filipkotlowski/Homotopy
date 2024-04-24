@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\File;
 |
 */
 
+Route::redirect('/', '/home');
 Route::middleware('auth.admin')->group(function () {
     Route::get('{any}', function ($any) {
         $path = public_path("app/index.html");
