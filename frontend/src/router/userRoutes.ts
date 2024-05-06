@@ -11,7 +11,7 @@ const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
             {
                 path: 'home',
                 name: 'home',
-                component: () => import(`./../views/client/${templateName}/HomeView.vue`),
+                component: () => import(`../templates/${templateName}/views/HomeView.vue`),
             },
             {
                 path: 'login',
