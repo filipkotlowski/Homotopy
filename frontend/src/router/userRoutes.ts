@@ -2,7 +2,6 @@ import { RouteRecordRaw } from 'vue-router';
 import useSettings from "@/composable/useSettings"
 const {actions: settingActions} = useSettings();
 const templateName = settingActions.getSetting("templateName");
-settingActions.updateSetting("templateName","template_two")
 const userRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
     {
         path: '/',

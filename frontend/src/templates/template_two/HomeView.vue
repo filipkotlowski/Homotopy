@@ -3,7 +3,7 @@
 </script>
 
 <template>
-Bari
+    template_two
 </template>
 
 <style scoped>
