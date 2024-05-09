@@ -1,10 +1,10 @@
 <script setup lang="ts">
-
+import FirstSection from "@/templates/bari/components/first-section/FirstSection.vue"
 </script>
 
 <template>
-    <div class="bg-template-primary">
-        Bari
+    <div>
+        <first-section />
     </div>
 </template>
 
