@@ -3,7 +3,9 @@
 </script>
 
 <template>
-Bari
+    <div class="bg-template-primary">
+        Bari
+    </div>
 </template>
 
 <style scoped>
