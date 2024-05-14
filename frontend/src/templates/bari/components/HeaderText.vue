@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 <template>
     <h2 
-    class="font-bold text-[33px]"
+    class="font-bold text-[33px] font-GelasioBold"
     :class="props.class"
     >
         <slot />

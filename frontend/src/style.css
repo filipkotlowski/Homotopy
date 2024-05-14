@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Gelasio-Italic";
+        src: url(./templates/bari/assets/fonts/Gelasio-Italic.ttf)
+            format("truetype");
+    }
+
+    @font-face {
+        font-family: "Gelasio-BoldItalic";
+        src: url(./templates/bari/assets/fonts/Gelasio-BoldItalic.ttf)
+            format("truetype");
+    }
+
+    @font-face {
+        font-family: "Gelasio-Bold";
+        src: url(./templates/bari/assets/fonts/Gelasio-Bold.ttf)
+            format("truetype");
+    }
+    @font-face {
+        font-family: "Mulish-Italic";
+        src: url(./templates/bari/assets/fonts/Mulish-Italic.ttf)
+            format("truetype");
+    }
+
+    @font-face {
+        font-family: "Mulish-Regular";
+        src: url(./templates/bari/assets/fonts/Mulish-Regular.ttf)
+            format("truetype");
+    }
+
+    @font-face {
+        font-family: "Mulish-Bold";
+        src: url(./templates/bari/assets/fonts/Mulish-Bold.ttf)
+            format("truetype");
+    }
+}

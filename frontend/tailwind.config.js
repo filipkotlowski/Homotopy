@@ -9,6 +9,14 @@ module.exports = {
         ...colors,
         ...templateColors
     },
+    fontFamily:{
+      GelasioItalic: ['Gelasio-Italic', 'sans-serif'],
+      GelasioBoldItalic: ['Gelasio-BoldItalic', 'sans-serif'],
+      GelasioBold: ['Gelasio-Bold', 'sans-serif'],
+      MulishBold: ['Mulish-Bold', 'serif'],
+      MulishRegular: ['Mulish-Regular', 'serif'],
+      MulishItalic: ['Mulish-Italic', 'serif'],
+    },
     extend: {
       dropShadow: {
          ...templateShadows

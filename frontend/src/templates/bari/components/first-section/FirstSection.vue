@@ -13,12 +13,13 @@ import BasicButton from '@/templates/bari/components/BasicButton.vue'
                     <!-- CMS: First section title -->
                     <header-text class="text-bari-accent drop-shadow-primary">Lorem Ipsum is simply dummy text</header-text>
                     <!-- CMS: First section subtitle -->
-                    <span class="text-bari-accent">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                    <span class="text-bari-accent font-GelasioItalic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                     <!-- CMS: First section button -->
                     <basic-button class="text-bari-primary bg-bari-light">lorem ipsum</basic-button>
                 </div>
                 <div class="w-1/3 flex ">
-                <img class="ml-9 object-cover object-left h-[378px] w-[147px] border-[9px] border-solid border-bari-light drop-shadow-primary" src="https://placehold.co/378x270" />
+                    <!-- CMS: First section image link -->
+                    <img class="ml-9 object-cover object-left h-[378px] w-[147px] border-[9px] border-solid border-bari-light drop-shadow-primary" src="https://placehold.co/378x270" />
                 </div>
             </div>
         </div>
