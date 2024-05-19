@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FirstSection from "@/templates/bari/components/first-section/FirstSection.vue"
 import SecondSection from "@/templates/bari/components/second-section/SecondSection.vue"
+import ThirdSection from "@/templates/bari/components/third-section/ThirdSection.vue"
 import Navbar from '@/templates/bari/components/first-section/Navbar.vue'
 
 </script>
@@ -10,6 +11,7 @@ import Navbar from '@/templates/bari/components/first-section/Navbar.vue'
         <navbar />
         <first-section />
         <second-section />
+        <third-section />
     </div>
 </template>
 

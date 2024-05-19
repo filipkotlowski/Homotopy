@@ -6,10 +6,10 @@ const props = defineProps({
 });
 </script>
 <template>
-    <h2 
+    <span 
     class="font-MulishItalic text-[11px]"
     :class="props.class"
     >
         <slot />
-    </h2>
+    </span>
 </template>
