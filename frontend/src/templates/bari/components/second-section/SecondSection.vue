@@ -6,7 +6,7 @@ import LongContentWithImage from '@/templates/bari/components/second-section/Lon
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    carousel:{
+    carousel: {
         interval: 10000,
         items: [
             {
@@ -21,7 +21,7 @@ const data = {
             },
         ]
     }
-    }
+}
 </script>
 <template>
     <section class="h-screen bg-bari-light px-7 py-10 flex flex-col items-center ">
