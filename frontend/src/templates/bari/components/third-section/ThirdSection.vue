@@ -29,10 +29,8 @@ const data = {
 </script>
 <template>
     <section class="h-screen bg-bari-dark px-7 py-10 flex flex-col items-center ">
-        <!-- CMS: Third section title -->
         <header-text class="text-bari-light text-center">{{ data.title }}</header-text>
         <v-divider thickness="2" color="bari-light" class="border-opacity-100 w-3/4"></v-divider>
-        <!-- CMS: Third section subtitle -->
         <sub-header-text class="text-bari-light text-center pt-2">{{ data.subtitle }}</sub-header-text>
         <counter :data="data.counter"/>
     </section>
