@@ -1,11 +1,17 @@
-<script setup lang="ts">
+<script setup>
 import FirstSection from "@/templates/bari/components/first-section/FirstSection.vue"
 import SecondSection from "@/templates/bari/components/second-section/SecondSection.vue"
 import ThirdSection from "@/templates/bari/components/third-section/ThirdSection.vue"
 import FourthSection from "@/templates/bari/components/fourth-section/FourthSection.vue"
 import FifthSection from "@/templates/bari/components/fifth-section/FifthSection.vue"
+import SixthSection from "@/templates/bari/components/sixth-section/SixthSection.vue"
 import Navbar from '@/templates/bari/components/first-section/Navbar.vue'
 
+const data = {
+    styles: {
+        footerBackground: 'bg-[#7AC5FF]',
+    },
+}
 </script>
 
 <template>
@@ -16,6 +22,8 @@ import Navbar from '@/templates/bari/components/first-section/Navbar.vue'
         <third-section />
         <fourth-section />
         <fifth-section />
+        <sixth-section />
+        <div class="mb-14 h-14" :class="data.styles.footerBackground">{{ new Date().getFullYear() }} — <strong>Vuetify</strong></div>
     </div>
 </template>
 
