@@ -32,13 +32,13 @@ const data = {
 <template>
     <section 
         :class="data.styles.sectionBackground"
-        class="h-screen bg-bari-light px-7 py-10 flex flex-col items-center ">
+        class="h-screen px-7 py-10 flex flex-col items-center ">
         <header-text 
             :class="data.styles.headerColor"
-            class="text-bari-dark text-center">{{ data.title }}</header-text>
+            class="text-center">{{ data.title }}</header-text>
         <sub-header-text 
             :class="data.styles.subHeaderColor"
-            class="text-bari-dark text-center">{{ data.subtitle }}</sub-header-text>
+            class="text-center">{{ data.subtitle }}</sub-header-text>
         <carousel class="h-[90%]" :data="data.carousel"/>
     </section>
 </template>

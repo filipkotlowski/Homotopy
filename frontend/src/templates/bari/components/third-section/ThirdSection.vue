@@ -6,7 +6,13 @@ import Counter from '@/templates/bari/components/third-section/Counter.vue';
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    styles: {
+        sectionBackground: 'bg-[#071630]',
+        headerColor: 'text-[#FCF8F8]',
+        subHeaderColor: 'text-[#FCF8F8]'
+    },
     counter:{
+        textColor: 'text-[#FCF8F8]',
         items:[
             {
                 'icon': 'mdi-account',
@@ -28,10 +34,16 @@ const data = {
     }
 </script>
 <template>
-    <section class="h-screen bg-bari-dark px-7 py-10 flex flex-col items-center ">
-        <header-text class="text-bari-light text-center">{{ data.title }}</header-text>
+    <section 
+        :class="data.styles.sectionBackground"
+        class="h-screen px-7 py-10 flex flex-col items-center ">
+        <header-text 
+            :class="data.styles.headerColor"
+            class="text-center">{{ data.title }}</header-text>
         <v-divider thickness="2" color="bari-light" class="border-opacity-100 w-3/4"></v-divider>
-        <sub-header-text class="text-bari-light text-center pt-2">{{ data.subtitle }}</sub-header-text>
+        <sub-header-text 
+            :class="data.styles.subHeaderColor"
+            class="text-center pt-2">{{ data.subtitle }}</sub-header-text>
         <counter :data="data.counter"/>
     </section>
 </template>
