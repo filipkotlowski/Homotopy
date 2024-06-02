@@ -6,6 +6,11 @@ import Carousel from '@/templates/bari/components/Carousel.vue';
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    styles: {
+        sectionBackground: 'bg-[#FCF8F8]',
+        headerColor: 'text-[#071630]',
+        subHeaderColor: 'text-[#071630]'
+    },
     carousel: {
         interval: 10000,
         carouselColor: 'bg-[#EEF8FF]',
@@ -25,11 +30,15 @@ const data = {
 }
 </script>
 <template>
-    <section class="h-screen bg-bari-light px-7 py-10 flex flex-col items-center ">
-        <!-- CMS: Second section title -->
-        <header-text class="text-bari-dark text-center">{{ data.title }}</header-text>
-        <!-- CMS: Second section subtitle -->
-        <sub-header-text class="text-bari-dark text-center">{{ data.subtitle }}</sub-header-text>
+    <section 
+        :class="data.styles.sectionBackground"
+        class="h-screen bg-bari-light px-7 py-10 flex flex-col items-center ">
+        <header-text 
+            :class="data.styles.headerColor"
+            class="text-bari-dark text-center">{{ data.title }}</header-text>
+        <sub-header-text 
+            :class="data.styles.subHeaderColor"
+            class="text-bari-dark text-center">{{ data.subtitle }}</sub-header-text>
         <carousel class="h-[90%]" :data="data.carousel"/>
     </section>
 </template>
