@@ -10,7 +10,6 @@ import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-import bariColors from "../src/templates/bari/colors";
 const vuetify = createVuetify({
     components,
     directives,
@@ -21,7 +20,6 @@ const vuetify = createVuetify({
                 colors: {
                     primary: "#a6132d",
                     surface: "#1e293b",
-                    ...bariColors
                 }
             },
         },

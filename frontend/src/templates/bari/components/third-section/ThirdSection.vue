@@ -2,14 +2,14 @@
 import HeaderText from '@/templates/bari/components/HeaderText.vue';
 import SubHeaderText from '@/templates/bari/components/SubHeaderText.vue';
 import Counter from '@/templates/bari/components/third-section/Counter.vue';
-// <!-- CMS: Second section data -->
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     styles: {
         sectionBackground: 'bg-[#071630]',
         headerColor: 'text-[#FCF8F8]',
-        subHeaderColor: 'text-[#FCF8F8]'
+        subHeaderColor: 'text-[#FCF8F8]',
+        dividerColor: '#FCF8F8',
     },
     counter:{
         textColor: 'text-[#FCF8F8]',
@@ -40,7 +40,7 @@ const data = {
         <header-text 
             :class="data.styles.headerColor"
             class="text-center">{{ data.title }}</header-text>
-        <v-divider thickness="2" color="bari-light" class="border-opacity-100 w-3/4"></v-divider>
+        <v-divider thickness="2" :color="data.styles.dividerColor" class="border-opacity-100 w-3/4"></v-divider>
         <sub-header-text 
             :class="data.styles.subHeaderColor"
             class="text-center pt-2">{{ data.subtitle }}</sub-header-text>

@@ -1,5 +1,4 @@
 import colors from "./colors.ts"
-import templateColors from "./src/templates/bari/colors.ts";
 import templateShadows from "./src/templates/bari/shadows.ts";
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -7,7 +6,6 @@ module.exports = {
   theme: {
     colors: {
         ...colors,
-        ...templateColors
     },
     fontFamily:{
       GelasioItalic: ['Gelasio-Italic', 'sans-serif'],

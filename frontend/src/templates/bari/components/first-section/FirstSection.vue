@@ -2,7 +2,6 @@
 import HeaderText from '@/templates/bari/components/HeaderText.vue'
 import BasicButton from '@/templates/bari/components/BasicButton.vue'
 
-// <!-- CMS: First section data -->
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
