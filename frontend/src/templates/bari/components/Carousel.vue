@@ -22,11 +22,13 @@ const props = defineProps({
                 <img :src="item.image"/>
                 <div :class="[props.data.carouselColor, props.showLongText ? 'p-4' : 'p-6']"
                 >
-                    <h3 class="text-[20px] text-center pb-3 font-MulishBold">
+                    <h3 
+                        :class="data.carouselTextColor"
+                        class="text-[20px] text-center pb-3 font-MulishBold">
                         {{ item.title }}
                     </h3>
                     <div 
-                    :class="props.showLongText ? '' : 'text-center' "
+                    :class="[data.carouselTextColor, props.showLongText ? '' : 'text-center' ]"
                     class="text-[11px] font-MulishRegular">
                         {{ item.content }}
                     </div>

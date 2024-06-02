@@ -13,6 +13,7 @@ const data = {
     carousel: {
         interval: 10000,
         carouselColor: 'bg-[#7AC5FF]',
+        carouselTextColor: 'text-[#FCF8F8]',
         items: [
             {
                 title: 'Lorem ipsum 1',

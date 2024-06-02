@@ -25,6 +25,13 @@ const vuetify = createVuetify({
         },
     },
 });
+// flicking
+
+import Flicking from "@egjs/vue3-flicking";
+import "@egjs/vue3-flicking/dist/flicking.css";
+// Or, if you have to support IE9
+import "@egjs/vue3-flicking/dist/flicking-inline.css";
+
 
 // toastification
 import Toast, { PluginOptions, POSITION } from "vue-toastification";
@@ -55,6 +62,7 @@ export const i18n = createI18n({
 
 const app = createApp(App);
 app.component(VueFeather.name, VueFeather);
+app.component("Flicking", Flicking);
 app.use(vuetify);
 app.use(router);
 app.use(Toast, options);
