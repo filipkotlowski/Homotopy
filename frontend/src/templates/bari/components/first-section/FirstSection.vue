@@ -7,24 +7,38 @@ const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     button: 'lorem ipsum',
-    image: 'https://placehold.co/378x270'
+    image: 'https://placehold.co/378x270',
+    styles: {
+        sectionBackground: 'bg-[#7AC5FF]',
+        headerColor: 'text-[#EEF8FF]',
+        subHeaderColor: 'text-[#EEF8FF]',
+        buttonColor: 'bg-[#FCF8F8]',
+        buttonTextColor: 'text-[#7AC5FF]',
+        imageBorderColor: 'border-[#FCF8F8]'
+    }
 }
 </script>
 
 <template>
-    <section class="h-screen bg-bari-primary px-7 py-10">
-            <div class="h-screen flex justify-between items-center">
-                <div class="mt-10 h-[80%] w-full flex align-center gap-[20px]">
-                    <div class="w-2/3 flex flex-col gap-[52px]">
-                        <header-text class="text-bari-accent drop-shadow-primary">{{ data.title }}</header-text>
-                        <span class="text-bari-accent font-GelasioItalic">{{ data.subtitle }}</span>
-                        <basic-button class="text-bari-primary bg-bari-light">{{data.button}}</basic-button>
-                    </div>
-                    <div class="w-1/3 flex ">
-                        <img class="ml-9 object-cover object-left h-[378px] w-[147px] border-[9px] border-solid border-bari-light drop-shadow-primary" :src="data.image" />
-                    </div>
+    <section :class="data.styles.sectionBackground" class="h-screen px-7 py-10">
+        <div class="h-screen flex justify-between items-center">
+            <div class="mt-10 h-[80%] w-full flex align-center gap-[20px]">
+                <div class="w-2/3 flex flex-col gap-[52px]">
+                    <header-text 
+                        :class="data.styles.headerColor" 
+                        class="drop-shadow-primary">{{ data.title}}</header-text>
+                    <span :class="data.styles.subHeaderColor" class="font-GelasioItalic">{{ data.subtitle }}</span>
+                    <basic-button
+                        :class="[data.styles.buttonColor, data.styles.buttonTextColor]">{{ data.button }}</basic-button>
+                </div>
+                <div class="w-1/3 flex ">
+                    <img 
+                        :class="data.styles.imageBorderColor"
+                        class="ml-9 object-cover object-left h-[378px] w-[147px] border-[9px] border-solid drop-shadow-primary"
+                        :src="data.image" />
                 </div>
             </div>
+        </div>
     </section>
 </template>
 
