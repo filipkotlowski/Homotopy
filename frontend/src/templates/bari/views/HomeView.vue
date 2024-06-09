@@ -4,7 +4,7 @@ import SecondSection from "@/templates/bari/components/second-section/SecondSect
 import ThirdSection from "@/templates/bari/components/third-section/ThirdSection.vue"
 import FourthSection from "@/templates/bari/components/fourth-section/FourthSection.vue"
 import FifthSection from "@/templates/bari/components/fifth-section/FifthSection.vue"
-import SixthSection from "@/templates/bari/components/sixth-section/SixthSection.vue"
+import ContactSection from "@/templates/bari/components/contact-section/ContactSection.vue"
 import Navbar from '@/templates/bari/components/first-section/Navbar.vue'
 
 const data = {
@@ -22,7 +22,7 @@ const data = {
         <third-section />
         <fourth-section />
         <fifth-section />
-        <sixth-section />
+        <contact-section />
         <div class="mb-14 h-14" :class="data.styles.footerBackground">{{ new Date().getFullYear() }} — <strong>Vuetify</strong></div>
     </div>
 </template>
