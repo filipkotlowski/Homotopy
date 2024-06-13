@@ -10,6 +10,7 @@ import Navbar from '@/templates/bari/components/first-section/Navbar.vue'
 const data = {
     styles: {
         footerBackground: 'bg-[#7AC5FF]',
+        footerTextColor: 'text-[#FCF8F8]'
     },
 }
 </script>
@@ -23,7 +24,7 @@ const data = {
         <fourth-section />
         <fifth-section />
         <contact-section />
-        <div class="mb-14 h-14" :class="data.styles.footerBackground">{{ new Date().getFullYear() }} — <strong>Vuetify</strong></div>
+        <div class="mb-14 h-14 flex justify-between p-5 text-sm" :class="[data.styles.footerBackground, data.styles.footerTextColor]"><span>Powered by Homotopy</span><span>{{ new Date().getFullYear() }}</span></div>
     </div>
 </template>
 

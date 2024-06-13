@@ -21,7 +21,7 @@ const data = {
 <template>
     <section :class="data.styles.sectionBackground" class="h-screen px-7 py-10">
         <div class="h-screen flex justify-between items-center">
-            <div class="mt-10 h-[80%] w-full flex align-center gap-[20px]">
+            <div class="w-full flex align-center gap-[20px]">
                 <div class="w-2/3 flex flex-col gap-[52px]">
                     <header-text 
                         :class="data.styles.headerColor" 
@@ -33,7 +33,7 @@ const data = {
                 <div class="w-1/3 flex ">
                     <img 
                         :class="data.styles.imageBorderColor"
-                        class="ml-9 object-cover object-left h-[378px] w-[147px] border-[9px] border-solid drop-shadow-primary"
+                        class="ml-9 object-cover object-left h-[428px] w-[147px] border-[9px] border-solid drop-shadow-primary"
                         :src="data.image" />
                 </div>
             </div>
