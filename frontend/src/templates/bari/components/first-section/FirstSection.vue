@@ -3,7 +3,7 @@ import HeaderText from '@/templates/bari/components/HeaderText.vue'
 import BasicButton from '@/templates/bari/components/BasicButton.vue'
 
 const data = {
-    title: 'Section title',
+    title: 'Section title is simply dummy text',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     button: 'lorem ipsum',
     image: 'https://placehold.co/378x270',
@@ -30,10 +30,10 @@ const data = {
                     <basic-button
                         :class="[data.styles.buttonColor, data.styles.buttonTextColor]">{{ data.button }}</basic-button>
                 </div>
-                <div class="w-1/3 flex ">
+                <div class="w-1/2 flex ">
                     <img 
                         :class="data.styles.imageBorderColor"
-                        class="ml-9 object-cover object-left h-[428px] w-[147px] border-[9px] border-solid drop-shadow-primary"
+                        class="ml-7 object-cover object-left h-[428px] w-[207px] border-[9px] border-r-0 border-solid drop-shadow-primary"
                         :src="data.image" />
                 </div>
             </div>
