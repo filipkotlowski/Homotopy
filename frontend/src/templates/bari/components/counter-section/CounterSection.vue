@@ -1,7 +1,7 @@
 <script setup>
 import HeaderText from '@/templates/bari/components/HeaderText.vue';
 import SubHeaderText from '@/templates/bari/components/SubHeaderText.vue';
-import Counter from '@/templates/bari/components/third-section/Counter.vue';
+import Counter from '@/templates/bari/components/counter-section/Counter.vue';
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
