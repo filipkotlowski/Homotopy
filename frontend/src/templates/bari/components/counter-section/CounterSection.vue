@@ -11,9 +11,9 @@ const data = {
         subHeaderColor: 'text-[#FCF8F8]',
         dividerColor: '#FCF8F8',
     },
-    counter:{
+    counter: {
         textColor: 'text-[#FCF8F8]',
-        items:[
+        items: [
             {
                 'icon': 'mdi-account',
                 'number': 100,
@@ -31,19 +31,16 @@ const data = {
             }
         ]
     }
-    }
+}
 </script>
 <template>
-    <section 
-        :class="data.styles.sectionBackground"
-        class="h-screen px-7 py-10 flex flex-col items-center ">
-        <header-text 
-            :class="data.styles.headerColor"
-            class="text-center">{{ data.title }}</header-text>
-        <v-divider thickness="2" :color="data.styles.dividerColor" class="border-opacity-100 w-3/4"></v-divider>
-        <sub-header-text 
-            :class="data.styles.subHeaderColor"
-            class="text-center pt-2">{{ data.subtitle }}</sub-header-text>
-        <counter :data="data.counter"/>
+    <section :class="data.styles.sectionBackground"
+        class="h-[100vh] px-7 py-10 flex flex-col items-center md:flex-row-reverse md:h-[40vh] md:justify-around lg:text-xl">
+        <div class="flex flex-col items-center md:items-end md:w-1/3">
+            <header-text :class="data.styles.headerColor" class="text-center">{{ data.title }}</header-text>
+            <v-divider thickness="2" :color="data.styles.dividerColor" class="border-opacity-100 w-3/4"></v-divider>
+            <sub-header-text :class="data.styles.subHeaderColor" class="!text-center pt-2 md:!text-right ">{{ data.subtitle}}</sub-header-text>
+        </div>
+        <counter :data="data.counter" />
     </section>
 </template>
