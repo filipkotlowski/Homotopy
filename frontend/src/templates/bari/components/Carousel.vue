@@ -20,7 +20,7 @@ const props = defineProps({
         <v-carousel :show-arrows="false" cycle hide-delimiters :interval="props.data?.interval"  height="65vh">
             <v-carousel-item v-for="item in props.data?.items">
                 <img :src="item.image"/>
-                <div class="drop-shadow-primary" :class="[props.data.carouselColor, props.showLongText ? 'p-4' : 'p-6']"
+                <div class="drop-shadow-primary" :class="[props.data.carouselColor, props.data.styles?.responsiveContentWidth ?? '', props.showLongText ? 'p-4' : 'p-6']"
                 >
                     <h3 
                         :class="data.carouselTextColor"
