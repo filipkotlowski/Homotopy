@@ -1,16 +1,15 @@
 <script setup>
 import { defineProps } from 'vue';
-  import { useDisplay } from 'vuetify'
+import { useDisplay } from 'vuetify'
 
-  const { mobile } = useDisplay()
+const { mobile } = useDisplay()
 
 const props = defineProps({
     data: Object,
 });
 </script>
 <template>
-    <div 
-        :class="data.textColor"
+    <div :class="data.textColor"
         class="flex flex-col items-center justify-center gap-[36px] h-[80%] md:flex-row md:gap-[128px]">
         <div v-for="item in props.data?.items" class="flex flex-col items-center justify-center">
             <div class="flex flex-col items-center md:flex-row-reverse md:items-end">

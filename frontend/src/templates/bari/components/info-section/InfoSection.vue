@@ -2,6 +2,10 @@
 import HeaderText from '@/templates/bari/components/HeaderText.vue';
 import SubHeaderText from '@/templates/bari/components/SubHeaderText.vue';
 import Carousel from '@/templates/bari/components/Carousel.vue';
+import InfoComponent from '@/templates/bari/components/info-section/InfoComponent.vue';
+import { useDisplay } from 'vuetify'
+
+const { mobile } = useDisplay()
 const data = {
     title: 'Section title',
     subtitle: 'Section subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -10,7 +14,7 @@ const data = {
         headerColor: 'text-[#071630]',
         subHeaderColor: 'text-[#071630]'
     },
-    carousel: {
+    info: {
         interval: 10000,
         carouselColor: 'bg-[#EEF8FF]',
         items: [
@@ -37,7 +41,8 @@ const data = {
             class="text-center">{{ data.title }}</header-text>
         <sub-header-text 
             :class="data.styles.subHeaderColor"
-            class="text-center">{{ data.subtitle }}</sub-header-text>
-        <carousel class="h-[90%]" :data="data.carousel"/>
+            class="text-center md:mb-5">{{ data.subtitle }}</sub-header-text>
+        <carousel v-if="mobile" class="h-[90%]" :data="data.info"/>
+        <info-component v-else :data="data.info"/>
     </section>
 </template>
