@@ -4,6 +4,31 @@
 
 @layer base {
     @font-face {
+        font-family: "Urbanist-Bold";
+        src: url(./assets/fonts/Urbanist-Bold.ttf)
+            format("truetype");
+    }
+    @font-face {
+        font-family: "Urbanist-Light";
+        src: url(./assets/fonts/Urbanist-Light.ttf)
+            format("truetype");
+    }
+    @font-face {
+        font-family: "Urbanist-Regular";
+        src: url(./assets/fonts/Urbanist-Regular.ttf)
+            format("truetype");
+    }
+    @font-face {
+        font-family: "Urbanist-Italic";
+        src: url(./assets/fonts/Urbanist-Italic.ttf)
+            format("truetype");
+    }
+    @font-face {
+        font-family: "Urbanist-ThinItalic";
+        src: url(./assets/fonts/Urbanist-ThinItalic.ttf)
+            format("truetype");
+    }
+    @font-face {
         font-family: "Gelasio-Italic";
         src: url(./templates/bari/assets/fonts/Gelasio-Italic.ttf)
             format("truetype");

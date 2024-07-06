@@ -14,6 +14,11 @@ module.exports = {
       MulishBold: ['Mulish-Bold', 'serif'],
       MulishRegular: ['Mulish-Regular', 'serif'],
       MulishItalic: ['Mulish-Italic', 'serif'],
+      UrbanistItalic: ['Urbanist-Italic', 'serif'],
+      UrbanistThinItalic: ['Urbanist-ThinItalic', 'serif'],
+      UrbanistRegular: ['Urbanist-Regular', 'serif'],
+      UrbanistLight: ['Urbanist-Light', 'serif'],
+      UrbanistBold: ['Urbanist-Bold', 'serif'],
     },
     extend: {
       dropShadow: {
