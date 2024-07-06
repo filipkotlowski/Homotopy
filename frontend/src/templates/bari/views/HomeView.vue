@@ -31,7 +31,7 @@ const data = {
             :is="item.component"
             :key="index"
         />
-        <div class="mb-14 h-14 flex justify-between p-5 text-sm"
+        <div class="h-14 flex justify-between p-5 text-sm"
             :class="[data.styles.footerBackground, data.styles.footerTextColor]"><span>Powered by
                 Homotopy</span><span>{{ new Date().getFullYear() }}</span></div>
     </div>
