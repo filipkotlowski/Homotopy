@@ -4,5 +4,5 @@ const props = defineProps({
 });
 </script>
 <template>
-    <v-btn type="submit" :text="props.text" density="default" color="primary"/>
+    <v-btn type="submit" :text="props.text" density="default" color="white"/>
 </template>
