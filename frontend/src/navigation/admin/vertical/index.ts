@@ -9,22 +9,22 @@ const tabs: (NavbarTab)[] = [
     position: 1,
   },
   {
+    title: 'messages',
+    icon: 'message-square',
+    position: 2,
+    isAdmin: true
+  },
+  {
+    title: 'templates',
+    icon: 'edit',
+    position: 3,
+    isAdmin: true
+  },
+  {
     title: 'settings',
     icon: 'settings',
-    position: 2,
-    isAdmin: true,
-    children: [
-      {
-        title: 'userSettings',
-        path: 'user-settings',
-        resource: 'settings',
-      },
-      {
-        title: 'globalSettings',
-        path: 'global-settings',
-        resource: 'settings',
-      },
-    ],
+    position: 4,
+    isAdmin: true
   },
 ];
 

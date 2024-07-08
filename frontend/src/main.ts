@@ -13,17 +13,6 @@ import * as directives from "vuetify/directives";
 const vuetify = createVuetify({
     components,
     directives,
-    theme: {
-        themes: {
-            light: {
-                dark: false,
-                colors: {
-                    primary: "#a6132d",
-                    surface: "#1e293b",
-                }
-            },
-        },
-    },
 });
 // flicking
 
