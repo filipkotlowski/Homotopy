@@ -7,7 +7,7 @@ const adminRoutes: (RouteRecordRaw & { children?: RouteRecordRaw[] })[] = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/admin/DashboardView.vue'),
+        component: () => import('@/views/admin/dashboard/DashboardView.vue'),
       },
       {
         path: 'user-settings',
